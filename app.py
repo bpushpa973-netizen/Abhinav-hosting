@@ -1106,12 +1106,15 @@ def api_set_startup(server_id):
 # ============================================
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+
     print("\n" + "=" * 50)
     print("🚀 abhinav HOSTING - FINAL")
     print("=" * 50)
-    print("📍 Landing: http://localhost:5000")
-    print("📍 Admin: http://localhost:5000/login")
-    print("🔗 API: http://localhost:5000/api/create")
+    print(f"📍 Landing: http://localhost:{port}")
+    print(f"📍 Admin: http://localhost:{port}/login")
+    print(f"🔗 API: http://localhost:{port}/api/create")
     print("👤 admin / admin123")
     print("=" * 50 + "\n")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+
+    app.run(host='0.0.0.0', port=port, debug=False)
